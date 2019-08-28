@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin:0 ;
+				padding: 0;
+			}
+			.box{
+				width: 700px;
+				height: 300px;
+				position: relative;
+				overflow: hidden;
+			}
+			#ul{
+				transition: 0.5s;
+				width: 2106px;
+				
+			}
+			#ul li{
+				font-size: 50px;
+				text-align: center;
+				line-height: 200px;
+				list-style: none;
+				background: salmon;
+				float: left;
+				width: 700px;
+				height: 300px;
+			}
+			#div{
+				position: absolute;
+				left: 0;
+				bottom: 0;
+			}
+			#div div{
+				text-align: center;
+				width: 233px;
+				height: 30px;
+				background: saddlebrown;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<ul id="ul">
+				<li>这是1</li>
+				<li>这是2</li>
+				<li>这是3</li>
+			</ul>
+			
+			<div id="div">
+				<div>1</div>
+				<div>2</div>
+				<div>3</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var oUl = document.getElementById('ul');
+		
+		var odiv = document.getElementById('div');
+		var olist = odiv.getElementsByTagName('div');
+		
+		for (var i =0;i<olist.length;i++) {
+			olist[i].index = i;
+			olist[i].onmouseover = function(){
+				switch (this.index){
+					case 0:
+						oUl.style.marginLeft ="0px";
+						break;
+					case 1:
+						oUl.style.marginLeft ="-700px";
+						break;
+					case 2:
+						oUl.style.marginLeft ="-1400px";
+						break;
+				}
+			}
+		}
+		
+	</script>
+</html>
